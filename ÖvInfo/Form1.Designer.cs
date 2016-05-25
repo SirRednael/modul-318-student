@@ -37,7 +37,7 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(12, 155);
+            this.btnsearch.Location = new System.Drawing.Point(12, 91);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(268, 39);
             this.btnsearch.TabIndex = 0;
@@ -63,7 +63,8 @@
             this.selectionFrom.Size = new System.Drawing.Size(191, 21);
             this.selectionFrom.TabIndex = 5;
             this.selectionFrom.UseWaitCursor = true;
-            this.selectionFrom.TextChanged += new System.EventHandler(this.selectionFrom_TextChanged);
+            this.selectionFrom.SelectedIndexChanged += new System.EventHandler(this.selectionFrom_SelectedIndexChanged);
+            this.selectionFrom.TextUpdate += new System.EventHandler(this.selectionFrom_TextUpdate);
             this.selectionFrom.MouseClick += new System.Windows.Forms.MouseEventHandler(this.selectionFrom_MouseClick);
             // 
             // selectionTo
@@ -74,7 +75,8 @@
             this.selectionTo.Size = new System.Drawing.Size(191, 21);
             this.selectionTo.TabIndex = 6;
             this.selectionTo.UseWaitCursor = true;
-            this.selectionTo.TextChanged += new System.EventHandler(this.selectionTo_TextChanged);
+            this.selectionTo.SelectedIndexChanged += new System.EventHandler(this.selectionTo_SelectedIndexChanged);
+            this.selectionTo.TextUpdate += new System.EventHandler(this.selectionTo_TextUpdate);
             this.selectionTo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.selectionTo_MouseClick);
             // 
             // lblTo
@@ -90,14 +92,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 211);
+            this.ClientSize = new System.Drawing.Size(292, 146);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.selectionTo);
             this.Controls.Add(this.selectionFrom);
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.btnsearch);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ÖV Info";
             this.ResumeLayout(false);
             this.PerformLayout();
 

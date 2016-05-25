@@ -21,8 +21,14 @@ namespace ÖvInfo
 
         private void btnsearch_Click(object sender, EventArgs e)
         {
+            string From = selectionFrom.Text;
+            string To = selectionTo.Text;
 
-
+            Verbindungen Verbindung = new Verbindungen(From, To);
+            Verbindung.Show();
+            
+            
+            
         }
 
         private void txtOrt_TextChanged(object sender, EventArgs e)
@@ -31,21 +37,7 @@ namespace ÖvInfo
 
         }
 
-        private void selectionFrom_TextChanged(object sender, EventArgs e)
-        {
-            
-            selectionFrom.Items.Clear();
 
-           selectionFrom.Select(selectionFrom.Text.Length, selectionFrom.Text.Length);
-
-            Stations From = new Stations();
-            Transport transport = new Transport();
-
-            From = transport.GetStations(selectionFrom.Text);
-
-            foreach (Station Hold in From.StationList)
-                selectionFrom.Items.Add(Hold.Name);
-        }
 
         private void selectionFrom_MouseClick(object sender, MouseEventArgs e)
         {
@@ -57,19 +49,58 @@ namespace ÖvInfo
             selectionTo.DroppedDown = true;
         }
 
-        private void selectionTo_TextChanged(object sender, EventArgs e)
+ 
+
+        private void selectionFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectionTo.Items.Clear();
+            selectionFrom.DroppedDown = false;
+            
+        }
 
-            selectionTo.Select(selectionTo.Text.Length, selectionTo.Text.Length);
+        private void selectionTo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectionTo.DroppedDown = false;
+           
+            
+        }
 
-            Stations To = new Stations();
-            Transport transport = new Transport();
+        private void selectionTo_TextUpdate(object sender, EventArgs e)
+        {
+            if (selectionTo.Text.Length > 4)
+            {
+                selectionTo.Items.Clear();
 
-            To = transport.GetStations(selectionFrom.Text);
+                selectionTo.Select(selectionTo.Text.Length, selectionTo.Text.Length);
 
-            foreach (Station Hold in To.StationList)
-                selectionTo.Items.Add(Hold.Name);
+                Stations To = new Stations();
+                Transport transporter = new Transport();
+
+                To = transporter.GetStations(selectionTo.Text);
+
+                foreach (Station Hold in To.StationList)
+                    selectionTo.Items.Add(Hold.Name);
+            }
+
+        }
+
+        private void selectionFrom_TextUpdate(object sender, EventArgs e)
+        {
+            if (selectionFrom.Text.Length > 4)
+            {
+
+                selectionFrom.Items.Clear();
+
+                selectionFrom.Select(selectionFrom.Text.Length, selectionFrom.Text.Length);
+
+                Stations From = new Stations();
+                Transport transport = new Transport();
+
+                From = transport.GetStations(selectionFrom.Text);
+
+                foreach (Station Hold in From.StationList)
+                    selectionFrom.Items.Add(Hold.Name);
+            }
+
         }
     }
 }
