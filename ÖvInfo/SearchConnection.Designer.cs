@@ -1,6 +1,6 @@
 ﻿namespace ÖvInfo
 {
-    partial class Form1
+    partial class ConnectionSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,8 @@
             this.selectionFrom = new System.Windows.Forms.ComboBox();
             this.selectionTo = new System.Windows.Forms.ComboBox();
             this.lblTo = new System.Windows.Forms.Label();
+            this.btnStationBoardFrom = new System.Windows.Forms.Button();
+            this.btnStationBoardTo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnsearch
@@ -60,7 +62,7 @@
             this.selectionFrom.FormattingEnabled = true;
             this.selectionFrom.Location = new System.Drawing.Point(89, 12);
             this.selectionFrom.Name = "selectionFrom";
-            this.selectionFrom.Size = new System.Drawing.Size(191, 21);
+            this.selectionFrom.Size = new System.Drawing.Size(175, 21);
             this.selectionFrom.TabIndex = 5;
             this.selectionFrom.UseWaitCursor = true;
             this.selectionFrom.SelectedIndexChanged += new System.EventHandler(this.selectionFrom_SelectedIndexChanged);
@@ -72,7 +74,7 @@
             this.selectionTo.FormattingEnabled = true;
             this.selectionTo.Location = new System.Drawing.Point(89, 50);
             this.selectionTo.Name = "selectionTo";
-            this.selectionTo.Size = new System.Drawing.Size(191, 21);
+            this.selectionTo.Size = new System.Drawing.Size(175, 21);
             this.selectionTo.TabIndex = 6;
             this.selectionTo.UseWaitCursor = true;
             this.selectionTo.SelectedIndexChanged += new System.EventHandler(this.selectionTo_SelectedIndexChanged);
@@ -88,17 +90,39 @@
             this.lblTo.TabIndex = 7;
             this.lblTo.Text = "To:";
             // 
-            // Form1
+            // btnStationBoardFrom
+            // 
+            this.btnStationBoardFrom.Location = new System.Drawing.Point(270, 9);
+            this.btnStationBoardFrom.Name = "btnStationBoardFrom";
+            this.btnStationBoardFrom.Size = new System.Drawing.Size(21, 23);
+            this.btnStationBoardFrom.TabIndex = 8;
+            this.btnStationBoardFrom.Text = ">";
+            this.btnStationBoardFrom.UseVisualStyleBackColor = true;
+            this.btnStationBoardFrom.Click += new System.EventHandler(this.btnStationBoardFrom_Click);
+            // 
+            // btnStationBoardTo
+            // 
+            this.btnStationBoardTo.Location = new System.Drawing.Point(270, 48);
+            this.btnStationBoardTo.Name = "btnStationBoardTo";
+            this.btnStationBoardTo.Size = new System.Drawing.Size(21, 23);
+            this.btnStationBoardTo.TabIndex = 9;
+            this.btnStationBoardTo.Text = ">";
+            this.btnStationBoardTo.UseVisualStyleBackColor = true;
+            this.btnStationBoardTo.Click += new System.EventHandler(this.btnStationBoardTo_Click);
+            // 
+            // ConnectionSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 146);
+            this.Controls.Add(this.btnStationBoardTo);
+            this.Controls.Add(this.btnStationBoardFrom);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.selectionTo);
             this.Controls.Add(this.selectionFrom);
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.btnsearch);
-            this.Name = "Form1";
+            this.Name = "ConnectionSearch";
             this.Text = "ÖV Info";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,6 +136,8 @@
         private System.Windows.Forms.ComboBox selectionFrom;
         private System.Windows.Forms.ComboBox selectionTo;
         private System.Windows.Forms.Label lblTo;
+        private System.Windows.Forms.Button btnStationBoardFrom;
+        private System.Windows.Forms.Button btnStationBoardTo;
     }
 }
 

@@ -32,8 +32,10 @@ namespace ÖvInfo
             listConnection.Columns.Add("", 30, HorizontalAlignment.Left);
             listConnection.Columns.Add("Point of Departure:", 160, HorizontalAlignment.Left);
             listConnection.Columns.Add("Departure:", 120, HorizontalAlignment.Left);
+            listConnection.Columns.Add("Platform:", 30, HorizontalAlignment.Left);
             listConnection.Columns.Add("Destination:", 160, HorizontalAlignment.Left);
             listConnection.Columns.Add("Arrival:", 120, HorizontalAlignment.Left);
+            listConnection.Columns.Add("Platform:", 30, HorizontalAlignment.Left);  
             listConnection.Columns.Add("Duration", 120, HorizontalAlignment.Left);
 
 
@@ -45,20 +47,19 @@ namespace ÖvInfo
             int lconn = 1; 
             foreach (Connection conn in connection.ConnectionList )
             {
-                string Arrival = conn.To.Arrival;
-                string Departure = conn.From.Departure;
+                DateTime Arrival = DateTime.Parse(conn.From.Departure);
+                DateTime Departure = DateTime.Parse(conn.To.Arrival);
+                DateTime Duration = DateTime.Parse(conn.Duration);
 
-                Departure = Departure.Remove(0, 11);
-                Arrival = Arrival.Remove(0, 11);
-                Arrival = Arrival.Remove(6, 8);
-                Departure = Departure.Remove(6, 8);
-
+            
                 ListViewItem connline = new ListViewItem(lconn.ToString());
                 connline.SubItems.Add(m_From);
-                connline.SubItems.Add(Departure);
+                connline.SubItems.Add(Departure + " Uhr");
+                connline.SubItems.Add(conn.From.Platform);
                 connline.SubItems.Add(m_To);
-                connline.SubItems.Add(Arrival);
-                connline.SubItems.Add(conn.Duration);
+                connline.SubItems.Add(Arrival + " Uhr");
+                connline.SubItems.Add(conn.To.Platform);
+                connline.SubItems.Add(Duration + " HH:MM");
 
                 listConnection.Items.Add(connline);
 
@@ -67,5 +68,7 @@ namespace ÖvInfo
 
 
         }
+
+
     }
 }

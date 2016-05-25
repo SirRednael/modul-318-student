@@ -14,7 +14,7 @@ namespace SwissTransport
     }
 
     public class StationBoard
-    {
+    { 
         [JsonProperty("name")]
         public string Name { get; set; }
 

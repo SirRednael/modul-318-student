@@ -39,6 +39,17 @@ namespace SwissTransport
             return null;
         }
 
+        public string GetStationBoard(string Station)
+        {
+            string id = GetStations(Station).StationList[0].Id;
+            return id;
+        }
+        /// <summary>
+        /// Liefert alle Verbindungen aufgrund der beiden Parameter.
+        /// </summary>
+        /// <param name="fromStation"></param>
+        /// <param name="toStattion"></param>
+        /// <returns></returns>
         public Connections GetConnections(string fromStation, string toStattion)
         {
             var request = CreateWebRequest("http://transport.opendata.ch/v1/connections?from=" + fromStation + "&to=" + toStattion);
