@@ -35,12 +35,34 @@ namespace ÖvInfo
         {
             if (selectionFrom.Text != "" && selectionTo.Text != "")
             {
-                error.Text = "";
-                string From = selectionFrom.Text;
-                string To = selectionTo.Text;
+                if (selectionTo.Text != selectionFrom.Text)
+                {
+                    error.Text = "";
+                    string From = selectionFrom.Text;
+                    string To = selectionTo.Text;
 
-                Verbindungen Verbindung = new Verbindungen(From, To);
-                Verbindung.Show();
+
+                    Transport trans = new Transport();
+                    Connections connection = new Connections();
+
+
+                    //Daten mithilfe von Transport.cs erhalten
+                    connection = trans.GetConnections(From, To);
+
+                    Verbindungen Verbindung = new Verbindungen(From, To, connection);
+                    if (connection.ConnectionList.Count() > 0)
+                    {
+                        Verbindung.Show();
+                    }
+                    else
+                    {
+                        error.Text = "This Search gives No Result, Try again!";
+                    }
+                }
+                else
+                {
+                    error.Text = "From and To Point can't be the same!";
+                }
             }
             else
             {

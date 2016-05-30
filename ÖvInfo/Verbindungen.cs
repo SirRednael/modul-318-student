@@ -17,6 +17,7 @@ namespace ÖvInfo
         //Member Variabeln (From, To)
         private string m_From;
         private string m_To;
+        private Connections m_connection;
 
         //Konstruktor ohne Parameter
         public Verbindungen()
@@ -26,15 +27,16 @@ namespace ÖvInfo
 
 
         //Konstruktor mit Parameter (From,To)
-        public Verbindungen(string From, string to)
+        public Verbindungen(string From, string to, Connections connection)
         {
             m_From = From;
             m_To = to;
+            m_connection = connection; 
             InitializeComponent();
         }
 
 
-        //Erhalten der Daten für die Verbindungen + Anzeige der Daten
+        // Anzeige der Daten in der List View
         private void Verbindungen_Load(object sender, EventArgs e)
         {
             //List View Column benennen und Spaltenbreite definieren
@@ -48,18 +50,13 @@ namespace ÖvInfo
             listConnection.Columns.Add("Duration", 100, HorizontalAlignment.Left);
 
 
-            Transport trans = new Transport();
-             Connections connection = new Connections();
 
-
-            //Daten mithilfe von Transport.cs erhalten
-            connection = trans.GetConnections(m_From, m_To);
 
             //Counter für Nummerierung der ListView Items 
             int lconn = 1;
 
             //Listview Items erstellen und hinzufügen + Counter erhöhen + Zeit Format Anpassen
-            foreach (Connection conn in connection.ConnectionList )
+            foreach (Connection conn in m_connection.ConnectionList )
             {
 
                 
