@@ -47,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 381);
             this.Controls.Add(this.listConnection);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Verbindungen";
             this.Text = "Verbindungen";
             this.Load += new System.EventHandler(this.Verbindungen_Load);

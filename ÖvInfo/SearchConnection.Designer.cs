@@ -35,13 +35,14 @@
             this.lblTo = new System.Windows.Forms.Label();
             this.btnStationBoardFrom = new System.Windows.Forms.Button();
             this.btnStationBoardTo = new System.Windows.Forms.Button();
+            this.error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnsearch
             // 
             this.btnsearch.Location = new System.Drawing.Point(12, 91);
             this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(268, 39);
+            this.btnsearch.Size = new System.Drawing.Size(279, 39);
             this.btnsearch.TabIndex = 0;
             this.btnsearch.Text = "Search Connection";
             this.btnsearch.UseVisualStyleBackColor = true;
@@ -50,7 +51,7 @@
             // lblFrom
             // 
             this.lblFrom.AutoSize = true;
-            this.lblFrom.Location = new System.Drawing.Point(12, 15);
+            this.lblFrom.Location = new System.Drawing.Point(12, 14);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(33, 13);
             this.lblFrom.TabIndex = 3;
@@ -58,16 +59,14 @@
             // 
             // selectionFrom
             // 
-            this.selectionFrom.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.selectionFrom.Cursor = System.Windows.Forms.Cursors.Default;
             this.selectionFrom.FormattingEnabled = true;
             this.selectionFrom.Location = new System.Drawing.Point(89, 12);
             this.selectionFrom.Name = "selectionFrom";
             this.selectionFrom.Size = new System.Drawing.Size(175, 21);
             this.selectionFrom.TabIndex = 5;
-            this.selectionFrom.UseWaitCursor = true;
-            this.selectionFrom.SelectedIndexChanged += new System.EventHandler(this.selectionFrom_SelectedIndexChanged);
             this.selectionFrom.TextUpdate += new System.EventHandler(this.selectionFrom_TextUpdate);
-            this.selectionFrom.MouseClick += new System.Windows.Forms.MouseEventHandler(this.selectionFrom_MouseClick);
+            this.selectionFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.selectionFrom_KeyDown);
             // 
             // selectionTo
             // 
@@ -76,15 +75,13 @@
             this.selectionTo.Name = "selectionTo";
             this.selectionTo.Size = new System.Drawing.Size(175, 21);
             this.selectionTo.TabIndex = 6;
-            this.selectionTo.UseWaitCursor = true;
-            this.selectionTo.SelectedIndexChanged += new System.EventHandler(this.selectionTo_SelectedIndexChanged);
             this.selectionTo.TextUpdate += new System.EventHandler(this.selectionTo_TextUpdate);
-            this.selectionTo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.selectionTo_MouseClick);
+            this.selectionTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.selectionTo_KeyDown);
             // 
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(12, 58);
+            this.lblTo.Location = new System.Drawing.Point(12, 53);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(23, 13);
             this.lblTo.TabIndex = 7;
@@ -110,11 +107,22 @@
             this.btnStationBoardTo.UseVisualStyleBackColor = true;
             this.btnStationBoardTo.Click += new System.EventHandler(this.btnStationBoardTo_Click);
             // 
+            // error
+            // 
+            this.error.AutoSize = true;
+            this.error.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error.ForeColor = System.Drawing.Color.Red;
+            this.error.Location = new System.Drawing.Point(88, 74);
+            this.error.Name = "error";
+            this.error.Size = new System.Drawing.Size(0, 13);
+            this.error.TabIndex = 10;
+            // 
             // ConnectionSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 146);
+            this.ClientSize = new System.Drawing.Size(304, 146);
+            this.Controls.Add(this.error);
             this.Controls.Add(this.btnStationBoardTo);
             this.Controls.Add(this.btnStationBoardFrom);
             this.Controls.Add(this.lblTo);
@@ -122,6 +130,9 @@
             this.Controls.Add(this.selectionFrom);
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.btnsearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ConnectionSearch";
             this.Text = "ÖV Info";
             this.ResumeLayout(false);
@@ -138,6 +149,7 @@
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Button btnStationBoardFrom;
         private System.Windows.Forms.Button btnStationBoardTo;
+        private System.Windows.Forms.Label error;
     }
 }
 

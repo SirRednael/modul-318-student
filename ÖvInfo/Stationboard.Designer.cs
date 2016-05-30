@@ -35,7 +35,7 @@
             // 
             this.liststationboard.Location = new System.Drawing.Point(12, 12);
             this.liststationboard.Name = "liststationboard";
-            this.liststationboard.Size = new System.Drawing.Size(428, 230);
+            this.liststationboard.Size = new System.Drawing.Size(492, 279);
             this.liststationboard.TabIndex = 0;
             this.liststationboard.UseCompatibleStateImageBehavior = false;
             this.liststationboard.View = System.Windows.Forms.View.Details;
@@ -44,8 +44,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 254);
+            this.ClientSize = new System.Drawing.Size(516, 303);
             this.Controls.Add(this.liststationboard);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Stationboard";
             this.Text = "Stationboard";
             this.Load += new System.EventHandler(this.Stationboard_Load);

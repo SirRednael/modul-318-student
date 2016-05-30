@@ -33,40 +33,19 @@ namespace ÖvInfo
         //das Fenster Verbindung wird geöffnet die Parameter werden mitgegeben(Abfahrtsort, Zielort) 
         private void btnsearch_Click(object sender, EventArgs e)
         {
-            string From = selectionFrom.Text;
-            string To = selectionTo.Text;
+            if (selectionFrom.Text != "" && selectionTo.Text != "")
+            {
+                error.Text = "";
+                string From = selectionFrom.Text;
+                string To = selectionTo.Text;
 
-            Verbindungen Verbindung = new Verbindungen(From, To);
-            Verbindung.Show();
-            
-        }
-
-
-        //Der Kombobox DropDown wird geöffnet wenn in die Kobobox geklickt wird
-        private void selectionFrom_MouseClick(object sender, MouseEventArgs e)
-        {
-            selectionFrom.DroppedDown = true;
-        }
-
-
-        //Der Kombobox DropDown wird geöffnet wenn in die Kobobox geklickt wird
-        private void selectionTo_MouseClick(object sender, MouseEventArgs e)
-        {
-            selectionTo.DroppedDown = true;
-        }
-
- 
-        //Der Kombobox DropDown schliesst sich, wenn ein Objekt im Dropdown angewählt wird
-        private void selectionFrom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selectionFrom.DroppedDown = false;     
-        }
-
-
-        //Der Kombobox DropDown schliesst sich, wenn ein Objekt im Dropdown angewählt wird
-        private void selectionTo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selectionTo.DroppedDown = false;                 
+                Verbindungen Verbindung = new Verbindungen(From, To);
+                Verbindung.Show();
+            }
+            else
+            {
+                error.Text = "Both Fields must be filled!";
+            }
         }
 
 
@@ -76,7 +55,6 @@ namespace ÖvInfo
             //die Stationssuche startet erst ab 4 Zeichen, da sonst für jeden Buchstaben eine Query an den Sever geschickt wird
             if (selectionTo.Text.Length > 4)
             {
-                
                 selectionTo.Items.Clear();
 
                 //setzt den Cursor an die letzte Stelle, weil nach einem Clear der Cursor an forderster Stelle steht
@@ -86,8 +64,15 @@ namespace ÖvInfo
                 Stations To = new Stations();
                 Transport transporter = new Transport();
 
-                To = transporter.GetStations(selectionTo.Text);
-
+                try
+                {
+                    To = transporter.GetStations(selectionTo.Text);
+                }
+                catch
+                {
+                    error.Text = "The Server Timed out: Please Try again!";
+                }
+                
                 //Für jede Station in der Liste wird ein Eintrag in der Kombobox erstellt
                 foreach (Station Hold in To.StationList)
                     selectionTo.Items.Add(Hold.Name);
@@ -111,30 +96,67 @@ namespace ÖvInfo
                 //Stationen werden Abgerufen, mit dem Parameter der Kombobox
                 Stations From = new Stations();
                 Transport transport = new Transport();
-
-                From = transport.GetStations(selectionFrom.Text);
-
-                //Für jede Station in der Liste wird ein Eintrag in der Kombobox erstellt
-                foreach (Station Hold in From.StationList)
+                try
+                {
+                    From = transport.GetStations(selectionFrom.Text);
+                }
+                catch
+                 {
+                     error.Text = "The Server Timed out: Please Try again!";
+                 }
+            //Für jede Station in der Liste wird ein Eintrag in der Kombobox erstellt
+            foreach (Station Hold in From.StationList)
                     selectionFrom.Items.Add(Hold.Name);
             }
 
         }
 
 
+        //Öffnet das Stationboard und validiert die Eingabe (ist etwas vorhanden)
         private void btnStationBoardFrom_Click(object sender, EventArgs e)
         {
-            Stationboard Stationboards = new Stationboard(selectionFrom.Text);
+            if (selectionFrom.Text != "")
+            {
+                error.Text = "";
+                Stationboard Stationboards = new Stationboard(selectionFrom.Text);
 
-            Stationboards.Show();
-             
+                Stationboards.Show();
+            }
+            else
+            {
+                error.Text = "The From field must be filled!";
+            }
         }
 
+
+        //Öffnet das Stationboard und validiert die Eingabe (ist etwas vorhanden)
         private void btnStationBoardTo_Click(object sender, EventArgs e)
         {
-            Stationboard Stationboards = new Stationboard(selectionTo.Text);
+            if (selectionTo.Text != "")
+            {
+                error.Text = "";
+                Stationboard Stationboards = new Stationboard(selectionTo.Text);
 
-            Stationboards.Show();
+                Stationboards.Show();
+            }
+            else
+            {
+                error.Text = "The To field must be filled!";
+            }
+        }
+
+
+        //Der Kombobox DropDown wird geöffnet wenn eine taste gedrückt wird
+        private void selectionFrom_KeyDown(object sender, KeyEventArgs e)
+        {
+            selectionFrom.DroppedDown = true;
+        }
+
+
+        //Der Kombobox DropDown wird geöffnet wenn eine taste gedrückt wird
+        private void selectionTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            selectionTo.DroppedDown = true;
         }
     }
 }
