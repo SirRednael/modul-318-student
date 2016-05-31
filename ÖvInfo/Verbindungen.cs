@@ -41,11 +41,12 @@ namespace ÖvInfo
         {
             //List View Column benennen und Spaltenbreite definieren
             listConnection.Columns.Add("", 26, HorizontalAlignment.Left);
-            listConnection.Columns.Add("Point of Departure:", 160, HorizontalAlignment.Left);
-            listConnection.Columns.Add("Departure:", 120, HorizontalAlignment.Left);
+            listConnection.Columns.Add("", 80, HorizontalAlignment.Left);
+            listConnection.Columns.Add("Point of Departure:", 140, HorizontalAlignment.Left);
+            listConnection.Columns.Add("Departure:", 100, HorizontalAlignment.Left);
             listConnection.Columns.Add("Platform:", 30, HorizontalAlignment.Left);
-            listConnection.Columns.Add("Destination:", 160, HorizontalAlignment.Left);
-            listConnection.Columns.Add("Arrival:", 120, HorizontalAlignment.Left);
+            listConnection.Columns.Add("Destination:", 140, HorizontalAlignment.Left);
+            listConnection.Columns.Add("Arrival:", 100, HorizontalAlignment.Left);
             listConnection.Columns.Add("Platform:", 30, HorizontalAlignment.Left);  
             listConnection.Columns.Add("Duration", 100, HorizontalAlignment.Left);
 
@@ -63,8 +64,8 @@ namespace ÖvInfo
                 //Zeit format der Ankunft, der Abfahrt un der Dauer ins richtige Format bringen
                 DateTime Departure = DateTime.Parse(conn.From.Departure);
                 DateTime Arrival = DateTime.Parse(conn.To.Arrival);
-                String Duration = conn.Duration.Remove(0, 4);
-                Duration = Duration.Remove(4, 3);
+                String Duration = conn.Duration.Remove(0, 3);
+                Duration = Duration.Remove(5, 3);
 
                 int Arrival_Hour = Arrival.Hour;
                 int Arrival_Minute = Arrival.Minute;
@@ -96,6 +97,7 @@ namespace ÖvInfo
 
                 //Listview Items erstellen und hinzufügen + Counter erhöhen
                 ListViewItem connline = new ListViewItem(lconn.ToString());
+                connline.SubItems.Add(Departure.ToShortDateString());
                 connline.SubItems.Add(m_From);
                 connline.SubItems.Add(Departures + " Uhr");
                 connline.SubItems.Add(conn.From.Platform);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectionSearch));
             this.btnsearch = new System.Windows.Forms.Button();
             this.lblFrom = new System.Windows.Forms.Label();
             this.selectionFrom = new System.Windows.Forms.ComboBox();
@@ -36,11 +37,15 @@
             this.btnStationBoardFrom = new System.Windows.Forms.Button();
             this.btnStationBoardTo = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.Label();
+            this.DateOfJourney = new System.Windows.Forms.DateTimePicker();
+            this.timeOfJourney = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(12, 91);
+            this.btnsearch.Location = new System.Drawing.Point(12, 165);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(279, 39);
             this.btnsearch.TabIndex = 0;
@@ -112,16 +117,57 @@
             this.error.AutoSize = true;
             this.error.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error.ForeColor = System.Drawing.Color.Red;
-            this.error.Location = new System.Drawing.Point(79, 74);
+            this.error.Location = new System.Drawing.Point(12, 137);
             this.error.Name = "error";
             this.error.Size = new System.Drawing.Size(0, 13);
             this.error.TabIndex = 10;
+            // 
+            // DateOfJourney
+            // 
+            this.DateOfJourney.CustomFormat = "yyyy-MM-dd";
+            this.DateOfJourney.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateOfJourney.Location = new System.Drawing.Point(89, 100);
+            this.DateOfJourney.Name = "DateOfJourney";
+            this.DateOfJourney.Size = new System.Drawing.Size(80, 20);
+            this.DateOfJourney.TabIndex = 11;
+            // 
+            // timeOfJourney
+            // 
+            this.timeOfJourney.CustomFormat = "HH:mm";
+            this.timeOfJourney.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timeOfJourney.Location = new System.Drawing.Point(175, 100);
+            this.timeOfJourney.Name = "timeOfJourney";
+            this.timeOfJourney.ShowUpDown = true;
+            this.timeOfJourney.Size = new System.Drawing.Size(89, 20);
+            this.timeOfJourney.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(86, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Date:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(172, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Time of Departure:";
             // 
             // ConnectionSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 146);
+            this.ClientSize = new System.Drawing.Size(304, 216);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.timeOfJourney);
+            this.Controls.Add(this.DateOfJourney);
             this.Controls.Add(this.error);
             this.Controls.Add(this.btnStationBoardTo);
             this.Controls.Add(this.btnStationBoardFrom);
@@ -131,6 +177,7 @@
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.btnsearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConnectionSearch";
@@ -150,6 +197,10 @@
         private System.Windows.Forms.Button btnStationBoardFrom;
         private System.Windows.Forms.Button btnStationBoardTo;
         private System.Windows.Forms.Label error;
+        private System.Windows.Forms.DateTimePicker DateOfJourney;
+        private System.Windows.Forms.DateTimePicker timeOfJourney;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

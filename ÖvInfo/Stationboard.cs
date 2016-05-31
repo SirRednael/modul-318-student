@@ -15,6 +15,7 @@ namespace ÖvInfo
     {
         //Member Variabel für die Destination 
         private string m_Destination;
+        private StationBoardRoot m_StationRoot;
 
 
         //Konstruktor ohne Parameter
@@ -25,10 +26,11 @@ namespace ÖvInfo
 
 
         //Konstruktor mit Parameter (To)
-        public Stationboard(string Destination)
+        public Stationboard(string Destination, StationBoardRoot StationRoot)
         {
             m_Destination = Destination;
             InitializeComponent();
+            m_StationRoot = StationRoot;
         }
 
 
@@ -42,18 +44,12 @@ namespace ÖvInfo
             liststationboard.Columns.Add("Train:", 120, HorizontalAlignment.Left);
             liststationboard.Columns.Add("To:", 160, HorizontalAlignment.Left);
 
-            
-            StationBoardRoot StationRoot = new StationBoardRoot();
-            Transport transporter = new Transport();
-
-            //Daten mithilfe von Transport.cs erhalten
-            StationRoot = transporter.GetStationBoard(m_Destination, transporter.GetStationBoard(m_Destination));
 
             //Counter für Nummerierung der ListView Items 
             int scount = 1;
 
             //Listview Items erstellen und hinzufügen + Counter erhöhen
-            foreach (StationBoard station in StationRoot.Entries)
+            foreach (StationBoard station in m_StationRoot.Entries)
             {
                 
                 ListViewItem connline = new ListViewItem(scount.ToString());

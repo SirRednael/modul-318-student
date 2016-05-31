@@ -40,14 +40,14 @@ namespace ÖvInfo
                     error.Text = "";
                     string From = selectionFrom.Text;
                     string To = selectionTo.Text;
-
+                    
 
                     Transport trans = new Transport();
                     Connections connection = new Connections();
 
 
                     //Daten mithilfe von Transport.cs erhalten
-                    connection = trans.GetConnections(From, To);
+                    connection = trans.GetConnections(From, To, timeOfJourney.Value, DateOfJourney.Value);
 
                     Verbindungen Verbindung = new Verbindungen(From, To, connection);
                     if (connection.ConnectionList.Count() > 0)
@@ -140,9 +140,31 @@ namespace ÖvInfo
             if (selectionFrom.Text != "")
             {
                 error.Text = "";
-                Stationboard Stationboards = new Stationboard(selectionFrom.Text);
 
-                Stationboards.Show();
+
+                StationBoardRoot StationRoot = new StationBoardRoot();
+                Transport transporter = new Transport();
+                try
+                {
+                    //Daten mithilfe von Transport.cs erhalten
+                    StationRoot = transporter.GetStationBoard(selectionFrom.Text, transporter.GetStationBoard(selectionFrom.Text));
+                }
+                catch
+                {
+                    error.Text = "This Search gives No Result, Try again!";
+                }
+                if (StationRoot.Entries != null &&StationRoot.Entries.Count() > 0)
+                {
+                    
+                        Stationboard Stationboards = new Stationboard(selectionFrom.Text, StationRoot);
+                        Stationboards.Show();
+                   
+                    
+                }
+                else
+                {
+                    error.Text = "This Search gives No Result, Try again!";
+                }
             }
             else
             {
@@ -157,9 +179,28 @@ namespace ÖvInfo
             if (selectionTo.Text != "")
             {
                 error.Text = "";
-                Stationboard Stationboards = new Stationboard(selectionTo.Text);
 
-                Stationboards.Show();
+                StationBoardRoot StationRoot = new StationBoardRoot();
+                Transport transporter = new Transport();
+                try
+                {
+                    //Daten mithilfe von Transport.cs erhalten
+                    StationRoot = transporter.GetStationBoard(selectionTo.Text, transporter.GetStationBoard(selectionTo.Text));
+                }
+                catch
+                {
+                    error.Text = "This Search gives No Result, Try again!";
+                }
+                if (StationRoot.Entries != null && StationRoot.Entries.Count() > 0)
+                {
+                    Stationboard Stationboards = new Stationboard(selectionTo.Text, StationRoot);
+
+                    Stationboards.Show();
+                }
+                else
+                {
+                    error.Text = "This Search gives No Result, Try again!";
+                }
             }
             else
             {
