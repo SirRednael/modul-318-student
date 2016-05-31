@@ -7,12 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTransport", "src\Swiss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTransportTest", "tests\SwissTransportTest\SwissTransportTest.csproj", "{959C6E54-5B1C-40F5-938A-C57B17451421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ÖvInfo", "ÖvInfo\ÖvInfo.csproj", "{A50208C8-0921-424A-A601-09920EA05C0C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71A02F9E-1434-46D1-B1A2-B80A4CC9643E}"
-	ProjectSection(SolutionItems) = preProject
-		..\Dokumentation_ÖV-Info.docx = ..\Dokumentation_ÖV-Info.docx
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OevInfo", "ÖvInfo\OevInfo.csproj", "{A50208C8-0921-424A-A601-09920EA05C0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
