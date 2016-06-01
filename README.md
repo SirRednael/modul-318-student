@@ -1,23 +1,23 @@
 # modul-318-student
 **Das ist das Projekt des ÜK318**
 
-Autor: Duft Leander
+_Autor: Duft Leander_
 
-Version: 1.0-Alpha
+_Version: 1.0-Alpha_
 
-Done: A001-A005
+_Done: A001-A005_
 
 
 
 **Ordner:**
 
-Dokumentation: Hier befinden sich alle Dokumente, welche zur Dokumentation gehören. (Die Doku selber, alle Diagramme welche während des ÜK's erarbeitet wurden)
+* Dokumentation: Hier befinden sich alle Dokumente, welche zur Dokumentation gehören. (Die Doku selber, alle Diagramme welche während des ÜK's erarbeitet wurden)
 
-src: Hier befindet sich der schon vom ÜK vorprogrammierte Code für die API Anbindung
+* src: Hier befindet sich der schon vom ÜK vorprogrammierte Code für die API Anbindung
 
-SwissTransportTest: Hier befindet sich das Testprojekt zur Applikation
+* SwissTransportTest: Hier befindet sich das Testprojekt zur Applikation
 
-ÖVInfo: Hier befinden sich meine Im ÜK erstellten Forms, Logiken etc.
+* ÖVInfo: Hier befinden sich meine Im ÜK erstellten Forms, Logiken etc.
 
 
 
