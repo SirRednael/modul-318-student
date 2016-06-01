@@ -134,7 +134,7 @@ namespace ÖvInfo
         }
 
 
-        //Öffnet das Stationboard und validiert die Eingabe (ist etwas vorhanden)
+        //Öffnet das Stationboard + validiert die Eingabe (ist etwas vorhanden) + holt Daten für das Station Board
         private void btnStationBoardFrom_Click(object sender, EventArgs e)
         {
             if (selectionFrom.Text != "")
@@ -173,7 +173,7 @@ namespace ÖvInfo
         }
 
 
-        //Öffnet das Stationboard und validiert die Eingabe (ist etwas vorhanden)
+        //Öffnet das Stationboard + validiert die Eingabe (ist etwas vorhanden) + Holt Daten für das Station Board
         private void btnStationBoardTo_Click(object sender, EventArgs e)
         {
             if (selectionTo.Text != "")

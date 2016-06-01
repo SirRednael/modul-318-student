@@ -45,10 +45,10 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(12, 165);
+            this.btnsearch.Location = new System.Drawing.Point(12, 150);
             this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(279, 39);
-            this.btnsearch.TabIndex = 0;
+            this.btnsearch.Size = new System.Drawing.Size(303, 39);
+            this.btnsearch.TabIndex = 7;
             this.btnsearch.Text = "Search Connection";
             this.btnsearch.UseVisualStyleBackColor = true;
             this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
@@ -56,7 +56,7 @@
             // lblFrom
             // 
             this.lblFrom.AutoSize = true;
-            this.lblFrom.Location = new System.Drawing.Point(12, 14);
+            this.lblFrom.Location = new System.Drawing.Point(9, 16);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(33, 13);
             this.lblFrom.TabIndex = 3;
@@ -69,7 +69,7 @@
             this.selectionFrom.Location = new System.Drawing.Point(89, 12);
             this.selectionFrom.Name = "selectionFrom";
             this.selectionFrom.Size = new System.Drawing.Size(175, 21);
-            this.selectionFrom.TabIndex = 5;
+            this.selectionFrom.TabIndex = 1;
             this.selectionFrom.TextUpdate += new System.EventHandler(this.selectionFrom_TextUpdate);
             this.selectionFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.selectionFrom_KeyDown);
             // 
@@ -79,14 +79,14 @@
             this.selectionTo.Location = new System.Drawing.Point(89, 50);
             this.selectionTo.Name = "selectionTo";
             this.selectionTo.Size = new System.Drawing.Size(175, 21);
-            this.selectionTo.TabIndex = 6;
+            this.selectionTo.TabIndex = 3;
             this.selectionTo.TextUpdate += new System.EventHandler(this.selectionTo_TextUpdate);
             this.selectionTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.selectionTo_KeyDown);
             // 
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(12, 53);
+            this.lblTo.Location = new System.Drawing.Point(9, 54);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(23, 13);
             this.lblTo.TabIndex = 7;
@@ -94,21 +94,21 @@
             // 
             // btnStationBoardFrom
             // 
-            this.btnStationBoardFrom.Location = new System.Drawing.Point(270, 9);
+            this.btnStationBoardFrom.Location = new System.Drawing.Point(270, 12);
             this.btnStationBoardFrom.Name = "btnStationBoardFrom";
-            this.btnStationBoardFrom.Size = new System.Drawing.Size(21, 23);
-            this.btnStationBoardFrom.TabIndex = 8;
-            this.btnStationBoardFrom.Text = ">";
+            this.btnStationBoardFrom.Size = new System.Drawing.Size(45, 21);
+            this.btnStationBoardFrom.TabIndex = 2;
+            this.btnStationBoardFrom.Text = "Detail";
             this.btnStationBoardFrom.UseVisualStyleBackColor = true;
             this.btnStationBoardFrom.Click += new System.EventHandler(this.btnStationBoardFrom_Click);
             // 
             // btnStationBoardTo
             // 
-            this.btnStationBoardTo.Location = new System.Drawing.Point(270, 48);
+            this.btnStationBoardTo.Location = new System.Drawing.Point(270, 50);
             this.btnStationBoardTo.Name = "btnStationBoardTo";
-            this.btnStationBoardTo.Size = new System.Drawing.Size(21, 23);
-            this.btnStationBoardTo.TabIndex = 9;
-            this.btnStationBoardTo.Text = ">";
+            this.btnStationBoardTo.Size = new System.Drawing.Size(45, 21);
+            this.btnStationBoardTo.TabIndex = 4;
+            this.btnStationBoardTo.Text = "Detail";
             this.btnStationBoardTo.UseVisualStyleBackColor = true;
             this.btnStationBoardTo.Click += new System.EventHandler(this.btnStationBoardTo_Click);
             // 
@@ -117,7 +117,7 @@
             this.error.AutoSize = true;
             this.error.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error.ForeColor = System.Drawing.Color.Red;
-            this.error.Location = new System.Drawing.Point(12, 137);
+            this.error.Location = new System.Drawing.Point(15, 128);
             this.error.Name = "error";
             this.error.Size = new System.Drawing.Size(0, 13);
             this.error.TabIndex = 10;
@@ -129,7 +129,7 @@
             this.DateOfJourney.Location = new System.Drawing.Point(89, 100);
             this.DateOfJourney.Name = "DateOfJourney";
             this.DateOfJourney.Size = new System.Drawing.Size(80, 20);
-            this.DateOfJourney.TabIndex = 11;
+            this.DateOfJourney.TabIndex = 5;
             // 
             // timeOfJourney
             // 
@@ -139,7 +139,7 @@
             this.timeOfJourney.Name = "timeOfJourney";
             this.timeOfJourney.ShowUpDown = true;
             this.timeOfJourney.Size = new System.Drawing.Size(89, 20);
-            this.timeOfJourney.TabIndex = 12;
+            this.timeOfJourney.TabIndex = 6;
             // 
             // label1
             // 
@@ -163,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 216);
+            this.ClientSize = new System.Drawing.Size(327, 201);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timeOfJourney);

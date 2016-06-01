@@ -40,7 +40,7 @@ namespace ÖvInfo
 
             //List View Column benennen und Spaltenbreite definieren
             liststationboard.Columns.Add("", 30, HorizontalAlignment.Left);
-            liststationboard.Columns.Add("Time:", 160, HorizontalAlignment.Left);
+            liststationboard.Columns.Add("Date/Time:", 160, HorizontalAlignment.Left);
             liststationboard.Columns.Add("Train:", 120, HorizontalAlignment.Left);
             liststationboard.Columns.Add("To:", 160, HorizontalAlignment.Left);
 
